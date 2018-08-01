@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lien parent{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% for link in links_parent %}
+            <div class="row top-buffer">
+                <div class="col-md-12 text-center">
+                    {% if link.link == "" %}
+                        {% set href = path('default', {'link_parent': link.id}) %}
+                    {% else %}
+                        {% set href = link.link %}
+                    {% endif %}
+                    <a href="{{ href }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">{{ link.name }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    <div>
+{% endblock %}
