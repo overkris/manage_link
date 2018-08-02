@@ -16,5 +16,20 @@
                 </div>
             </div>
         {% endfor %}
+        <div class=".top-buffer"></div>
+        {% if id_current_link != 0 %}
+            <div class="row top-buffer">
+                <div class="col-md-12 text-center">
+                    <a href="{{ path('default', {'link_parent': 0}) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Retour</a>
+                </div>
+            </div>
+        {% endif %}
+        {% if id_current_link == 0 %}
+        <div class="row top-buffer">
+                <div class="col-md-12 text-center">
+                    <a href="{{ path('link_index') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit link</a>
+                </div>
+        </div>
+        {% endif %}
     <div>
 {% endblock %}

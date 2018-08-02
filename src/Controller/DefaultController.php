@@ -14,7 +14,8 @@ class DefaultController extends Controller
     public function index(LinkRepository $linkRepository, $link_parent = 0)
     {
         return $this->render('default/index.html.twig', [
-            'links_parent' => $linkRepository->findBy(["parent" => $link_parent])
+            'links_parent' => $linkRepository->findBy(["parent" => $link_parent]),
+            'id_current_link' => $link_parent
         ]);
     }
 }
