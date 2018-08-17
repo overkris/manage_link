@@ -5,29 +5,28 @@
 {% block body %}
     <div class="container">
         {% for link in links_parent %}
-            <div class="row top-buffer">
-                <div class="col-md-12 text-center">
+            <div class="row">
+                <div class="col s12 center-align">
                     {% if link.link == "" %}
                         {% set href = path('default', {'link_parent': link.id}) %}
                     {% else %}
                         {% set href = link.link %}
                     {% endif %}
-                    <a href="{{ href }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">{{ link.name }}</a>
+                    <a href="{{ href }}" class="waves-effect waves-light btn-large"><span class="flow-text">{{ link.name }}</span></a>
                 </div>
             </div>
         {% endfor %}
-        <div class=".top-buffer"></div>
         {% if id_current_link != 0 %}
-            <div class="row top-buffer">
-                <div class="col-md-12 text-center">
-                    <a href="{{ path('default', {'link_parent': 0}) }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Retour</a>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ path('default', {'link_parent': 0}) }}" class="flow-text waves-effect waves-light btn-large"><span class="flow-text">Retour</span></a>
                 </div>
             </div>
         {% endif %}
         {% if id_current_link == 0 %}
-        <div class="row top-buffer">
-                <div class="col-md-12 text-center">
-                    <a href="{{ path('link_index') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit link</a>
+        <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ path('link_index') }}" class="flow-text waves-effect waves-light btn-large"><span class="flow-text">Edit link</span></a>
                 </div>
         </div>
         {% endif %}
