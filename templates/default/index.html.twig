@@ -12,21 +12,21 @@
                     {% else %}
                         {% set href = link.link %}
                     {% endif %}
-                    <a href="{{ href }}" class="waves-effect waves-light btn-large"><span class="flow-text">{{ link.name }}</span></a>
+                    <a href="{{ href }}" class="waves-effect waves-light btn-large">{{ link.name }}</a>
                 </div>
             </div>
         {% endfor %}
         {% if id_current_link != 0 %}
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ path('default', {'link_parent': 0}) }}" class="flow-text waves-effect waves-light btn-large"><span class="flow-text">Retour</span></a>
+                    <a href="{{ path('default', {'link_parent': 0}) }}" class="waves-effect waves-light btn-large">Retour</a>
                 </div>
             </div>
         {% endif %}
         {% if id_current_link == 0 %}
         <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ path('link_index') }}" class="flow-text waves-effect waves-light btn-large"><span class="flow-text">Edit link</span></a>
+                    <a href="{{ path('link_index') }}" class="waves-effect waves-light btn-large">Edit link</a>
                 </div>
         </div>
         {% endif %}
