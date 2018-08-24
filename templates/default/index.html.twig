@@ -19,14 +19,18 @@
         {% if id_current_link != 0 %}
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ path('default', {'link_parent': 0}) }}" class="waves-effect waves-light btn-large">Retour</a>
+                    <a href="{{ path('default', {'link_parent': 0}) }}" class="btn-floating btn-large waves-effect waves-light">
+                        <i class="material-icons">arrow_back</i>
+                    </a>
                 </div>
             </div>
         {% endif %}
         {% if id_current_link == 0 %}
         <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ path('link_index') }}" class="waves-effect waves-light btn-large">Edit link</a>
+                    <a href="{{ path('link_index') }}" class="btn-floating btn-large waves-effect waves-light">
+                        <i class="material-icons">edit</i>
+                    </a>
                 </div>
         </div>
         {% endif %}
